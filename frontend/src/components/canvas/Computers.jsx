@@ -5,7 +5,7 @@ import CanvasLoader from '../Loader';
 
 
 
-const Computers = () => {
+const Computers = ({ isMobile }) => {
 
   const computer = useGLTF('/desktop_pc/scene.gltf');
 
@@ -21,13 +21,29 @@ const Computers = () => {
       castShadow
       shadow-mapSize={1024}
       />
-      <primitive object={computer.scene} scale={0.75} position={[0, -3.25, -1.5]} rotation={[-0.01, -0.2, -0.1]} />
+      <primitive object={computer.scene} scale={isMobile? 0.7 : 0.75} position={[0, -3.25, -1.5]} rotation={[-0.01, -0.2, -0.1]} />
     </mesh>
   )
 }
 
 
 const ComputerCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 500px)');
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    }
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    return() => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    }
+  }, []);
+
   return (
     <Canvas 
     frameLoop="demand"
@@ -40,7 +56,7 @@ const ComputerCanvas = () => {
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
         />
-        <Computers />
+        <Computers isMobile={isMobile}/>
       </Suspense>
       <Preload all />
     </Canvas>
