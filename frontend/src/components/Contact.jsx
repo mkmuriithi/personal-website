@@ -8,6 +8,10 @@ import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 
+// Template ID: template_pg05h6b
+// Service ID: service_zwzvr7g
+// public key: o3uFMPHQzasi4FyVz
+
 const Contact = () => {
   const formRef = useRef();
   const [ form, setForm ] = useState({
@@ -24,7 +28,34 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevent page from reloading
+    setLoading(true);
+
+    emailjs.send(
+    'service_qhva428',
+    'template_pg05h6b',
+    {
+      from_name: form.name,
+      to_name: 'Matthew',
+      from_email: form.email,
+      to_email: 'themaverick253@gmail.com',
+      message: form.message,
+    },
+    'o3uFMPHQzasi4FyVz')
+    .then(() => {
+      setLoading(false);
+      alert('Thanks you for reaching out! I will get back to you as soon as possible');
+      setForm({
+        name: '',
+        email: '',
+        message: '',
+      });  
+    }, (error) => {
+      setLoading(false);
+      alert(error.text);
+    })
+  };
 
 
   return (
@@ -80,6 +111,15 @@ const Contact = () => {
 
           </button>
         </form>
+      </motion.div>
+
+      <motion.div
+      variants={slideIn('right', "tween", 0.2, 1)}
+      className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+      >
+        <EarthCanvas />
+
+
       </motion.div>
 
     </div>

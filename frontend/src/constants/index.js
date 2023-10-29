@@ -23,6 +23,7 @@ import {
   jobit,
   tripguide,
   threejs,
+  td,
 } from "../assets";
 
 export const navLinks = [
@@ -42,19 +43,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Fullstack Software Engineer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Data Scientist",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Cybersecurity Analyst",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Cloud Practioner",
     icon: creator,
   },
 ];
@@ -116,11 +117,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "",
+    company_name: "TD Securities",
+    icon: td,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "July 2023 - Current",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -129,44 +130,42 @@ const experiences = [
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Software Engineer",
+    company_name: "TD Bank",
+    icon: td,
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Data Scientist - Internship",
+    company_name: "TD Bank",
+    icon: td,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "May 2021 - Aug 2021",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
+    title: "Data Scientist - Internship",
+    company_name: "TD Bank",
+    icon: td,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Sept 2020 - Dec 2020",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
+  {
+    title: "Cybersecurity Analyst - Internship",
+    company_name: "TD Bank",
+    icon: td,
+    iconBg: "#E6DEDD",
+    date: "May 2020 - Aug 2020",
+    points: [
+    ],
+  },
+
 ];
 
 const testimonials = [
